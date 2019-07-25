@@ -1,0 +1,30 @@
+{
+  "project_type": "javascript",
+  "debugMode": 1,
+  "showFPS": true,
+  "frameRate": 60,
+  "noCache": false,
+  "id": "gameCanvas",
+  "renderMode": 0,
+  "engineDir": "frameworks/cocos2d-html5",
+  "modules": [
+    "cocos2d",
+    "extensions",
+    "box2d"
+  ],
+  "jsList": [
+    "src/Game_Resource.js",
+    "src/BoxObject.js",
+    "src/Background.js",
+    "src/GameLayer.js",
+    "src/BoxMap.js",
+    "src/Bomb.js",
+    "src/Game_ScoreLayer.js",
+    "src/Creep.js",
+    "src/Player.js",
+    "src/Boss.js",
+    "src/Items.js",
+    "src/Demobox2d.js"
+
+  ]
+}
