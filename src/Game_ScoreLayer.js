@@ -11,13 +11,14 @@ var LayerScore = cc.Layer.extend({
     size: null,
     realTime: 0,
     userNameData: null,
-    ctor: function (data) {
+    avtUserLB:null,
+    ctor: function (userName,dataUser) {
         /**
          * Get string value by key, if the key doesn't exist, will return passed default value.
          * @param key The name of Player.
 
          */
-        this.userNameData = data;
+        this.userNameData = userName;
         this._super();
         this.score();
         this.countItemBoom();
@@ -27,6 +28,7 @@ var LayerScore = cc.Layer.extend({
         this.kim();
         this.countKillBoos();
         this.countItemBomSize();
+        this.avtUser(dataUser);
 
 //time
         this.scheduleUpdate();
@@ -110,4 +112,10 @@ var LayerScore = cc.Layer.extend({
         this.countKillBossLB.setColor(cc.color(255, 255, 255));
         this.addChild(this.countKillBossLB);
     },
+    avtUser:function (dataUser) {
+        this.avtUserLB=new cc.Sprite.create(dataUser[4]);
+        this.avtUserLB.setScale(0.4)
+        this.avtUserLB.setPosition(1020,505);
+        this.addChild(this.avtUserLB)
+    }
 });

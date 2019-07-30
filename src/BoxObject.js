@@ -12,7 +12,7 @@ var BoxObject = cc.Class.extend({
     makeBoxBody: function (pos, width, height, spriteImage, type) {
         this.pos = pos;
         this.fixtureDef = new b2FixtureDef;
-        this.fixtureDef.density = 1.0; //khoi luong rieng
+        this.fixtureDef.density = 1000; //khoi luong rieng
         this.fixtureDef.friction = 1;   // ma sat
         this.fixtureDef.restitution = 0; // dan hoi
         this.fixtureDef.shape = new b2PolygonShape;

@@ -24,6 +24,11 @@
     "src/Player.js",
     "src/Boss.js",
     "src/Items.js",
+    "src/GameMenu_ChosePlayer.js",
+    "src/GameMain.js",
+    "src/GameMenu_HighScore.js",
+    "src/Game_LoseWin.js",
+    "src/Game_Data.js",
     "src/Demobox2d.js"
 
   ]

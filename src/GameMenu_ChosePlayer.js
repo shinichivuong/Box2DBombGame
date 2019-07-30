@@ -1,3 +1,4 @@
+
 var GameMenuChosePlayer = cc.Layer.extend({
     dataUser: null,     //Du lieu nhan vat duoc chon
     userNameGame: null, //Ten nhan vat do nguoi dung nhap
@@ -59,7 +60,6 @@ var GameMenuChosePlayer = cc.Layer.extend({
         this.userNameGame.setPlaceHolder("user Name");
         this.userNameGame.setPlaceholderFontSize(25);
         this.addChild(this.userNameGame);
-
         //canh bao chua nhap ten
         this.noName = new cc.LabelTTF("Bạn chưa nhập tên!");
         this.noName.setFontSize(15);
@@ -93,7 +93,7 @@ var GameMenuChosePlayer = cc.Layer.extend({
                     this.noChose.setVisible(true);
                 }
                 else {
-                    var scene = new GameLayer(this.userNameGame.getString(), this.dataUser);
+                    var scene = new gameScene(this.userNameGame.getString(), this.dataUser);
                     cc.director.runScene(new cc.TransitionFade(2, scene));
                     break;
                 }

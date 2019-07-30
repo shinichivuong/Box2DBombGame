@@ -1,13 +1,19 @@
 var Destroyer = BoxObject.extend({
-    time:0,
+    time: 0,
+    heart: 10,
+    heartSprite: null,
+    pos: 0,
+    arrHeartBoss: [],
+    countHeartBoss:10,
     ctor: function (pos) {
-        this.makeBoxBody(pos, 135, 135, res.BigBossDown_png,"boss");
-          },
+        this.makeBoxBody(pos, 130, 130, res.BigBossDown_png, "boss");
+        this.pos = pos;
+    },
     update: function (dt) {
         this.time += dt;
-        if (this.time>2){
-            var huong=this.generateDirection();
-            var pos=this.sprite.getPosition();
+        if (this.time > 2) {
+            var huong = this.generateDirection();
+            var pos = this.sprite.getPosition();
             if (huong.x == 0 && huong.y == 45) {
                 this.sprite.setTexture(res.BigBossUp_png);
 
@@ -26,13 +32,23 @@ var Destroyer = BoxObject.extend({
                 this.sprite.setTexture(res.BigBossDown_png);
 
             }
-            var point=cc.pAdd(pos,huong);
-            pointBody=this.sprite.getPosition();
+            var point = cc.pAdd(pos, huong);
+            pointBody = this.sprite.getPosition();
             // this.body.ApplyForce(cc.p(huong.x/worldScale,huong.y/worldScale),cc.p(pointBody.x/worldScale,point.y/worldScale));
-            this.body.SetLinearVelocity(cc.p(huong.x/worldScale,huong.y/worldScale));
-            // this.body.SetAngularVelocity(0);
-            this.time=0;
+            this.body.SetLinearVelocity(cc.p(huong.x / worldScale, huong.y / worldScale));
+            // this.// this.body.SetAngularVelocity(0);
+
+            this.time = 0;
         }
+        for (
+            var i = 0;
+            i < this.arrHeartBoss.length;
+            i++
+        )
+        {
+            this.arrHeartBoss[i].setPosition(this.sprite.getPosition().x - 135 / 3 + i * 10, this.sprite.getPosition().y + 90);
+        }
+
     },
     generateDirection: function () {
         /**
@@ -57,5 +73,19 @@ var Destroyer = BoxObject.extend({
         return cc.p(0, 0);
 
 
+    },
+    bossHeart: function (game) {
+        for (var i = 0; i < this.heart; i++) {
+            var heartSprite = new cc.Sprite(res.BigBossHeart_png);
+            heartSprite.setAnchorPoint(cc.p(0.5, 0.5));
+            heartSprite.setLocalZOrder(2);
+            heartSprite.setPosition(this.pos.x - 135 / 3 + i * 10, this.pos.y + 50);
+            game.addChild(heartSprite);
+            this.arrHeartBoss.push(heartSprite);
+        }
+    },
+    destroy: function () {
+        world.DestroyBody(this.body);
+        this.sprite.setVisible(false);
     }
 });

@@ -26,6 +26,11 @@ var res = {
     HelloWorld_png : "res/HelloWorld.png",
 
     Background_png : "res/background/background_Play3.png",
+    BGHighScore_png: "res/background/background_hightscore.png",
+    BGChosePlayer_png: "res/background/background_Actor.png",
+    BackGr_png: "res/background/background_Menu.png",
+    Help_png: "res/background/background_option.png",
+    Backgr2_png: "res/background/backGround.jpg",
 
     BebongDown_png: "res/bebong/bebong_down.png",
     BebongUp_png: "res/bebong/bebong_up.png",
@@ -61,8 +66,48 @@ var res = {
 //
     PlayerSax: "res/other/bebong_dead.png",
 
+    //btn cancel
+    BtnCancel_png: "res/button/cancel1.png",
+    BtnCancel2_png: "res/button/cancel2.png",
+    Start_png: "res/button/Play.png",
+    Start2_png: "res/button/Play2.png",
+    Exit_png: "res/button/Exit.png",
+    Exit2_png: "res/button/Exit2.png",
+    HightScore_png: "res/button/HightScore.png",
+    HightScore2_png: "res/button/HightScore2.png",
 
+    //nhan vat bebong
+    BebongDown_png: "res/bebong/bebong_down.png",
+    BebongUp_png: "res/bebong/bebong_up.png",
+    BebongRight_png: "res/bebong/bebong_right.png",
+    BebongLeft_png: "res/bebong/bebong_left.png",
 
+    //tia chop
+    TiaChopUp_png: "res/User/tiachop_up.png",
+    TiaChopRight_png: "res/User/tiachop_right.png",
+    TiaChopLeft_png: "res/User/tiachop_left.png",
+    TiaChopDown_png: "res/User/tiachop_down.png",
+
+    //khokho
+    KhoKhoUp_png: "res/User/khokho_up.png",
+    KhoKhoRight_png: "res/User/khokho_right.png",
+    KhoKhoLeft_png: "res/User/khokho_left.png",
+    KhoKhoDown_png: "res/User/khokho_down.png",
+
+    //button chon nhan vat
+    bebong1_png: "res/User/beBong1.png",
+    bebong2_png: "res/User/beBong2.png",
+    tiachop1_png: "res/User/tiaChop1.png",
+    tiachop2_png: "res/User/tiaChop2.png",
+    khoKho1_png: "res/User/khoKho1.png",
+    khoKho2_png: "res/User/khoKho2.png",
+
+    // sprite hien thi thong tin nhan vat
+    opbebong_png: "res/User/opbebong.png",
+    opkhokho_png: "res/User/opkhokho.png",
+    optiachop_png: "res/User/optiachop.png",
+
+    ghost_png:"res/User/ghost2.png",
 };
 
 var g_resources = [];

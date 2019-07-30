@@ -8,7 +8,7 @@ var BoxMap = cc.Class.extend({
     ctor: function (pos, width, height, static, spriteImage, type) {
         var fixtureDef = new b2FixtureDef;
         fixtureDef.shape = new b2PolygonShape;
-        fixtureDef.density = 100.0; //khoi luong rieng
+        fixtureDef.density = 1000; //khoi luong rieng
         fixtureDef.friction = 0.5;   // ma sat
         fixtureDef.restitution = 0; // dan hoi
         // fixtureDef.filter.groupIndex = CATEGORY_SCENERY;
@@ -32,8 +32,8 @@ var BoxMap = cc.Class.extend({
     update: function (dt) {
         if (this.active){
             if (this.body.GetUserData().asset.visible == false) {
-                // this.destroy();
-                // this.active == false;
+                this.destroy();
+                this.active == false;
             }
         }
 
